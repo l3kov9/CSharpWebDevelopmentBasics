@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentSystem.Models
 {
@@ -17,5 +18,7 @@ namespace StudentSystem.Models
         public int CourseId { get; set; }
 
         public Course Course { get; set; }
+
+        public List<License> Licenses { get; set; } = new List<License>();
     }
 }

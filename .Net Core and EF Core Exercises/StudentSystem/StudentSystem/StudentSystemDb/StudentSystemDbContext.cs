@@ -13,6 +13,8 @@ namespace StudentSystem.StudentSystemDb
 
         public DbSet<Resource> Resources { get; set; }
 
+        public DbSet<License> Licenses { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder
@@ -54,6 +56,12 @@ namespace StudentSystem.StudentSystemDb
                 .HasOne(h => h.Course)
                 .WithMany(c => c.Homeworks)
                 .HasForeignKey(h => h.CourseId);
+
+            builder
+                .Entity<License>()
+                .HasOne(l => l.Resource)
+                .WithMany(r => r.Licenses)
+                .HasForeignKey(l => l.ResourceId);
         }
     }
 }
