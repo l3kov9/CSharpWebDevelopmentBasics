@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Interfaces\Generic\" />
+    <Folder Include="Routers\" />
+    <Folder Include="ViewEngine\Generic\" />
+  </ItemGroup>
+
+</Project>

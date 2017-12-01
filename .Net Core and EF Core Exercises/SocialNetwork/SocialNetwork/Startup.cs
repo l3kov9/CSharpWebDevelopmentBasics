@@ -46,9 +46,10 @@ namespace SocialNetwork
                             a.Name,
                             Tags = a.Tags.Select(t => t.Tag.Name)
                         })
+                        .ToList()
                 })
                 .OrderByDescending(u => u.Albums.Count())
-                .ThenByDescending(u => u.Albums.SelectMany(a=>a.Tags).Count())
+                .ThenByDescending(u => u.Albums.Sum(t=>t.Tags.Count()))
                 .ThenBy(u=>u.Username)
                 .ToList();
 
